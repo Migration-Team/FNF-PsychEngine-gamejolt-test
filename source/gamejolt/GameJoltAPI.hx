@@ -5,6 +5,7 @@ import flixel.util.FlxTimer;
 import flixel.FlxG;
 import lime.system.System;
 import gamejolt.GameJoltKeys;
+import gamejolt.GameJoltAPI;
 
 using StringTools;
 
