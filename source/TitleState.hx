@@ -91,6 +91,9 @@ class TitleState extends MusicBeatState
 		FlxG.android.preventDefaultKeys = [BACK];
 		#end
 
+		GameJoltAPI.connect();
+		GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
+		
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
