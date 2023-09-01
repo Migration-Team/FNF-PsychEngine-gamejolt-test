@@ -3,6 +3,7 @@ package;
 #if desktop
 import sys.thread.Thread;
 #end
+import gamejolt.GameJoltAPI;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
