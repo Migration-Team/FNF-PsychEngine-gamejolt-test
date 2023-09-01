@@ -75,6 +75,7 @@ jobs:
           haxelib git linc_luajit https://github.com/Sirox228/linc_luajit
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib git extension-androidtools https://github.com/MaysLastPlay77/extension-androidtools
+          haxelib git gamejolt https://github.com/pwp114514/GameJolt-FNF-Integration-Psych-Engine-recovered.git
           haxelib install hxcpp-debug-server
           haxelib list
       - name: Create Version Tag
