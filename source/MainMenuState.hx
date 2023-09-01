@@ -3,6 +3,7 @@ package;
 #if desktop
 import Discord.DiscordClient;
 #end
+import gamejolt.GameJoltAPI;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -46,6 +47,7 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+	var debugKeysQ:Array<FlxKey>;
 
 	override function create()
 	{
@@ -62,7 +64,7 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
-		debugKeys1 = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
+		debugKeysQ = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
 
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
@@ -270,7 +272,7 @@ class MainMenuState extends MusicBeatState
 				MusicBeatState.switchState(new MasterEditorMenu());
 			}
 			#end
-			else if (FlxG.keys.anyJustPressed(debugKeys1) #if android || _virtualpad.buttonY.justPressed #end)
+			else if (FlxG.keys.anyJustPressed(debugKeysQ) #if android || _virtualpad.buttonY.justPressed #end)
 			{
 				 selectedSomethin = true;
 				MusicBeatState.switchState(new GameJoltLogin());
