@@ -7,6 +7,9 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
+	public static var gjUser:Bool = false;
+	public static var gjToken:Bool = false;
+	public static var lbToggle:Bool = false;
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var opponentStrums:Bool = true;
@@ -134,6 +137,10 @@ class ClientPrefs {
 		FlxG.save.data.pauseMusic = pauseMusic;
 		FlxG.save.data.checkForUpdates = checkForUpdates;
 		FlxG.save.data.comboStacking = comboStacking;
+
+		FlxG.save.data.gjUser = gjUser;
+		FlxG.save.data.gjToken = gjToken;
+		FlxG.save.data.lbToggle = lbToggle;
 		
 		FlxG.save.data.hitboxmode = hitboxmode;
 		FlxG.save.data.hitboxalpha = hitboxalpha;
@@ -149,6 +156,28 @@ class ClientPrefs {
 	}
 
 	public static function loadPrefs() {
+		        //GameJolt Things
+        if(FlxG.save.data.gjUser != null)
+        {
+            FlxG.save.data.gjUser = FlxG.save.data.gjUser;
+        }
+
+        if (FlxG.save.data.gjToken != null)
+        {
+            FlxG.save.data.gjToken = FlxG.save.data.gjToken;
+        }
+
+        if (FlxG.save.data.lbToggle == null)
+        {
+            FlxG.save.data.lbToggle = false;
+            FlxG.save.flush();
+        }
+
+        if (FlxG.save.data.lbToggle != null)
+        {
+            GameJoltAPI.leaderboardToggle = FlxG.save.data.lbToggle;
+        }
+		
 		if(FlxG.save.data.downScroll != null) {
 			downScroll = FlxG.save.data.downScroll;
 		}
