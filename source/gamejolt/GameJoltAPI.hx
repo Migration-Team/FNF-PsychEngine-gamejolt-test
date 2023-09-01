@@ -1,5 +1,6 @@
 package gamejolt;
 
+import gamejolt.FlxGameJolt;
 import haxe.iterators.StringIterator;
 import flixel.util.FlxTimer;
 import flixel.FlxG;
