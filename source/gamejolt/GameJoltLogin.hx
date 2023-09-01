@@ -1,5 +1,6 @@
 package gamejolt;
 
+import gamejolt.FlxGameJolt;
 import flixel.ui.FlxButton;
 import flixel.text.FlxText;
 import flixel.addons.ui.FlxUIInputText;
