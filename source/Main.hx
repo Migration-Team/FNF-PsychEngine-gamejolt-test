@@ -11,6 +11,7 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
+import gamejolt.GameJoltToastManager;
 
 #if desktop
 import Discord.DiscordClient;
@@ -40,6 +41,7 @@ class Main extends Sprite
 		startFullscreen: true // if the game should start at fullscreen mode
 	};
 
+	public static var gjToastManager:GameJoltToastManager;
 	public static var fpsVar:FPS;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -76,6 +78,9 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+		
+		gjToastManager = new GameJoltToastManager();
+		addChild(gjToastManager);
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
