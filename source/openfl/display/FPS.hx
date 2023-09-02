@@ -32,6 +32,7 @@ class FPS extends TextField
 		The current frame rate, expressed using frames-per-second
 	**/
 	public var currentFPS(default, null):Int;
+	public var psychEngineVersion:String = '0.6.3'; 
 
 	
 	@:noCompletion private var cacheCount:Int;
@@ -95,8 +96,7 @@ class FPS extends TextField
 			memoryMegas = Math.abs(FlxMath.roundDecimal(System.totalMemory / 1000000, 1));
 			text += "\nMemory: " + memoryMegas + " MB";
 			#end
-			peV = MainMenuState.psychEngineVersion;
-			text += "\nPsychEngineVersion V " + peV;
+			text += "\nPsychEngineVersion V " + psychEngineVersion;
 			
 			textColor = 0xFFFFFFFF;
 			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
