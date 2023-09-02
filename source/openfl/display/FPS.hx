@@ -34,11 +34,39 @@ class FPS extends TextField
 	**/
 	public var currentFPS(default, null):Int;
 	var time:FlxText;
+	var baseX:Int = 0;
 
 	@:noCompletion private var cacheCount:Int;
 	@:noCompletion private var currentTime:Float;
 	@:noCompletion private var times:Array<Float>;
 
+	override function create()
+	{
+
+
+
+
+		time = new FlxText(0, 45, 0, Date.now().toString(), 14);
+        	time.x += baseX;
+        	add(time);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	}
 	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
 	{
 		super();
@@ -54,9 +82,7 @@ class FPS extends TextField
 		multiline = true;
 		text = "FPS: ";
 
-		time = new FlxText(0, 45, 0, Date.now().toString(), 14);
-        	time.x += baseX;
-        	add(time);
+		
 
 
 		cacheCount = 0;
