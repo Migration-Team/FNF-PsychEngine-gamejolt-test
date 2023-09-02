@@ -54,6 +54,11 @@ class FPS extends TextField
 		multiline = true;
 		text = "FPS: ";
 
+		time = new FlxText(0, 45, 0, Date.now().toString(), 14);
+        	time.x += baseX;
+        	add(time);
+
+
 		cacheCount = 0;
 		currentTime = 0;
 		times = [];
@@ -93,8 +98,7 @@ class FPS extends TextField
 			text += "\nMemory: " + memoryMegas + " MB";
 			#end
 			#if android
-			time = Date.now().toString();
-			text += "\nTime: " + time;
+			text += "\n " + time;
 			#end
 			
 			textColor = 0xFFFFFFFF;
