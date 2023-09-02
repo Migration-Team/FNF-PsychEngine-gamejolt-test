@@ -41,9 +41,11 @@ class Main extends Sprite
 		startFullscreen: true // if the game should start at fullscreen mode
 	};
 
-	public static var gjToastManager:GameJoltToastManager;
+	
 	public static var fpsVar:FPS;
+	public static var gjToastManager:GameJoltToastManager;
 
+	
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
 	public static function main():Void
