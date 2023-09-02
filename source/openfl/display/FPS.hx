@@ -92,7 +92,7 @@ class FPS extends TextField
 			text += "\nMemory: " + memoryMegas + " MB";
 			#end
 			#if android
-			memoryMegas = Date.now().toString();
+			Time = Date.now().toString();
 			text += "\nTime: " + memoryMegas;
 			#end
 			
