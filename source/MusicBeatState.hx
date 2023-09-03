@@ -135,6 +135,7 @@ class MusicBeatState extends FlxUIState
 	];
 	}
 
+	public static var currentColor = 0;    
 	var skippedFrames = 0;
 	override function update(elapsed:Float)
 	{
