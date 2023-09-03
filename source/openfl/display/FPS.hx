@@ -5,6 +5,7 @@ import openfl.events.Event;
 import openfl.text.TextField;
 import openfl.text.TextFormat;
 import flixel.math.FlxMath;
+import flixel.util.FlxColor;
 #if gl_stats
 import openfl.display._internal.stats.Context3DStats;
 import openfl.display._internal.stats.DrawCallContext;
@@ -97,7 +98,7 @@ class FPS extends TextField
 		currentFPS = Math.round((currentCount + cacheCount) / 2);
 		if (currentFPS > ClientPrefs.framerate) currentFPS = ClientPrefs.framerate;
 
-		if (FlxG.save.data.fpsR && skippedFrames >= 6)
+		if (ClientPrefs.data.fpsR&& skippedFrames >= 6)
 		{
 			if (currentColor >= ColorArray.length)
 				currentColor = 0;
