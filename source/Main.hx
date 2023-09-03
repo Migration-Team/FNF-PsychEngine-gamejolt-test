@@ -6,7 +6,6 @@ import flixel.FlxGame;
 import flixel.FlxState;
 import openfl.Assets;
 import openfl.Lib;
-import flixel.FlxSprite;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
@@ -43,8 +42,6 @@ class Main extends Sprite
 	};
 
 
-	var cursorSprite:FlxSprite;
-    	var cursorSprite2:FlxSprite;
 	
 	public static var fpsVar:FPS;
 	public static var gjToastManager:GameJoltToastManager;
