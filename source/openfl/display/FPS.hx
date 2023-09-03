@@ -55,7 +55,15 @@ class FPS extends TextField
 		multiline = true;
 		text = "FPS: ";
 
-		
+		var array:Array<FlxColor> = [
+		FlxColor.fromRGB(148, 0, 211),
+		FlxColor.fromRGB(75, 0, 130),
+		FlxColor.fromRGB(0, 0, 255),
+		FlxColor.fromRGB(0, 255, 0),
+		FlxColor.fromRGB(255, 255, 0),
+		FlxColor.fromRGB(255, 127, 0),
+		FlxColor.fromRGB(255, 0, 0)
+	];
 
 
 		cacheCount = 0;
@@ -73,6 +81,8 @@ class FPS extends TextField
 
 	// Event Handlers
 	@:noCompletion
+	public static var currentColor = 0;
+	var skippedFrames = 0;
 	private #if !flash override #end function __enterFrame(deltaTime:Float):Void
 	{
 		currentTime += deltaTime;
@@ -87,6 +97,19 @@ class FPS extends TextField
 		currentFPS = Math.round((currentCount + cacheCount) / 2);
 		if (currentFPS > ClientPrefs.framerate) currentFPS = ClientPrefs.framerate;
 
+		if (FlxG.save.data.fpsR && skippedFrames >= 6)
+		{
+			if (currentColor >= ColorArray.length)
+				currentColor = 0;
+			textColor = ColorArray[currentColor];
+			currentColor++;
+			skippedFrames = 0;
+		}
+		else
+		{
+			skippedFrames++;
+		}
+		
 		if (currentCount != cacheCount /*&& visible*/)
 		{
 			text = "FPS: " + currentFPS;
