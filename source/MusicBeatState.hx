@@ -134,6 +134,7 @@ class MusicBeatState extends FlxUIState
 	];
 	}
 
+	var skippedFrames = 0;
 	override function update(elapsed:Float)
 	{
 
