@@ -11,6 +11,7 @@ class ClientPrefs {
 	public static var gjUser:Bool = false;
 	public static var gjToken:Bool = false;
 	public static var lbToggle:Bool = false;
+	public static var fpsR:Bool = true;
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var opponentStrums:Bool = true;
@@ -105,6 +106,7 @@ class ClientPrefs {
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.opponentStrums = opponentStrums;
 		FlxG.save.data.showFPS = showFPS;
+		FlxG.save.data.fpsR = fpsR;
 		FlxG.save.data.flashing = flashing;
 		FlxG.save.data.globalAntialiasing = globalAntialiasing;
 		FlxG.save.data.noteSplashes = noteSplashes;
@@ -194,6 +196,10 @@ class ClientPrefs {
 				Main.fpsVar.visible = showFPS;
 			}
 		}
+		if(FlxG.save.data.fpsR != null) { 
+			fpsR = FlxG.save.data.fpsR;
+		}
+		
 		if(FlxG.save.data.flashing != null) {
 			flashing = FlxG.save.data.flashing;
 		}
