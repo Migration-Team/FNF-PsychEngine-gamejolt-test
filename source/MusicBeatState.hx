@@ -122,10 +122,34 @@ class MusicBeatState extends FlxUIState
 			openSubState(new CustomFadeTransition(0.7, true));
 		}
 		FlxTransitionableState.skipNextTransOut = false;
+
+		var array:Array<FlxColor> = [
+		FlxColor.fromRGB(148, 0, 211),
+		FlxColor.fromRGB(75, 0, 130),
+		FlxColor.fromRGB(0, 0, 255),
+		FlxColor.fromRGB(0, 255, 0),
+		FlxColor.fromRGB(255, 255, 0),
+		FlxColor.fromRGB(255, 127, 0),
+		FlxColor.fromRGB(255, 0, 0)
+	];
 	}
 
 	override function update(elapsed:Float)
 	{
+
+
+		if (FlxG.save.data.fpsR && skippedFrames >= 6)
+		{
+			if (currentColor >= array.length)
+				currentColor = 0;
+			(cast(Lib.current.getChildAt(0), Main)).changeDisplayColor(array[currentColor]);
+			currentColor++;
+			skippedFrames = 0;
+		}
+		else
+		{
+			skippedFrames++;
+		}
 		//everyStep();
 		var oldStep:Int = curStep;
 
