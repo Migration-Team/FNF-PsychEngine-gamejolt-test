@@ -31,6 +31,8 @@ using StringTools;
 
 class Main extends Sprite
 {
+	var fps:FPS = new FPS(10, 3, 0xFFFFFF);
+
 	var game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
@@ -108,6 +110,7 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
+		
 
 		#if html5
 		FlxG.autoPause = false;
@@ -131,7 +134,10 @@ class Main extends Sprite
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
 	// very cool person for real they don't get enough credit for their work
 	
-	
+	public function changeDisplayColor(color:FlxColor)
+	{
+		fps.textColor = color;
+	}
 	
 	#if CRASH_HANDLER
 	function onCrash(e:UncaughtErrorEvent):Void
