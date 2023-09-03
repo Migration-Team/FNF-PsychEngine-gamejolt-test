@@ -134,17 +134,7 @@ class Main extends Sprite
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
 	// very cool person for real they don't get enough credit for their work
 	
-	function changeCursor(value:Bool)
-        {
-            if (value)
-                {
-                    FlxG.mouse.load(cursorSprite2.pixels);
-                }
-            if (!value)
-                {
-                    FlxG.mouse.load(cursorSprite.pixels);
-                }
-        }
+	
 	
 	#if CRASH_HANDLER
 	function onCrash(e:UncaughtErrorEvent):Void
