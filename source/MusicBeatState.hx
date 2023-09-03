@@ -124,7 +124,7 @@ class MusicBeatState extends FlxUIState
 		}
 		FlxTransitionableState.skipNextTransOut = false;
 
-		var array:Array<FlxColor> = [
+		var ColorArray:Array<FlxColor> = [
 		FlxColor.fromRGB(148, 0, 211),
 		FlxColor.fromRGB(75, 0, 130),
 		FlxColor.fromRGB(0, 0, 255),
@@ -144,7 +144,7 @@ class MusicBeatState extends FlxUIState
 		{
 			if (currentColor >= array.length)
 				currentColor = 0;
-			(cast(Lib.current.getChildAt(0), Main)).changeDisplayColor(array[currentColor]);
+			testColor = ColorArray[currentColor];
 			currentColor++;
 			skippedFrames = 0;
 		}
