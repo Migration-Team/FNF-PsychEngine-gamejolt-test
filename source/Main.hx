@@ -6,6 +6,7 @@ import flixel.FlxGame;
 import flixel.FlxState;
 import openfl.Assets;
 import openfl.Lib;
+import flixel.FlxSprite;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
@@ -41,6 +42,9 @@ class Main extends Sprite
 		startFullscreen: true // if the game should start at fullscreen mode
 	};
 
+
+	var cursorSprite:FlxSprite;
+    	var cursorSprite2:FlxSprite;
 	
 	public static var fpsVar:FPS;
 	public static var gjToastManager:GameJoltToastManager;
@@ -129,6 +133,19 @@ class Main extends Sprite
 
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
 	// very cool person for real they don't get enough credit for their work
+	
+	function changeCursor(value:Bool)
+        {
+            if (value)
+                {
+                    FlxG.mouse.load(cursorSprite2.pixels);
+                }
+            if (!value)
+                {
+                    FlxG.mouse.load(cursorSprite.pixels);
+                }
+        }
+	
 	#if CRASH_HANDLER
 	function onCrash(e:UncaughtErrorEvent):Void
 	{
@@ -170,4 +187,10 @@ class Main extends Sprite
 		Sys.exit(1);
 	}
 	#end
+	override function create()
+    {
+	cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
+        cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
+        FlxG.mouse.visible = true;
+    }
 }
