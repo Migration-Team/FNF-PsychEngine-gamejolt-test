@@ -321,4 +321,15 @@ class MainMenuState extends MusicBeatState
 			}
 		});
 	}
+	function changeCursor(value:Bool)
+        {
+            if (value)
+                {
+                    FlxG.mouse.load(cursorSprite2.pixels);
+                }
+            if (!value)
+                {
+                    FlxG.mouse.load(cursorSprite.pixels);
+                }
+        }
 }
