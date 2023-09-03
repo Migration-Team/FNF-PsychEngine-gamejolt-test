@@ -12,6 +12,7 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
 import gamejolt.GameJoltToastManager;
+import flixel.util.FlxColor;
 
 #if desktop
 import Discord.DiscordClient;
