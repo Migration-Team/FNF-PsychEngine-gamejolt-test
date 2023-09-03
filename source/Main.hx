@@ -187,10 +187,4 @@ class Main extends Sprite
 		Sys.exit(1);
 	}
 	#end
-	function create()
-    	{
-	cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
-        cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
-        FlxG.mouse.visible = true;
-    	}
 }
