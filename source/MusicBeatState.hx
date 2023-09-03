@@ -14,7 +14,6 @@ import flixel.util.FlxGradient;
 import flixel.FlxState;
 import flixel.FlxCamera;
 import flixel.FlxBasic;
-import openfl.Lib;
 
 #if android
 import flixel.input.actions.FlxActionInput;
@@ -124,35 +123,13 @@ class MusicBeatState extends FlxUIState
 		}
 		FlxTransitionableState.skipNextTransOut = false;
 
-		var ColorArray:Array<FlxColor> = [
-		FlxColor.fromRGB(148, 0, 211),
-		FlxColor.fromRGB(75, 0, 130),
-		FlxColor.fromRGB(0, 0, 255),
-		FlxColor.fromRGB(0, 255, 0),
-		FlxColor.fromRGB(255, 255, 0),
-		FlxColor.fromRGB(255, 127, 0),
-		FlxColor.fromRGB(255, 0, 0)
-	];
+		
 	}
 
-	public static var currentColor = 0;    
-	var skippedFrames = 0;
 	override function update(elapsed:Float)
 	{
 
 
-		if (FlxG.save.data.fpsR && skippedFrames >= 6)
-		{
-			if (currentColor >= ColorArray.length)
-				currentColor = 0;
-			(cast(Lib.current.getChildAt(0), Main)).changeDisplayColor(ColorArray[currentColor]);
-			currentColor++;
-			skippedFrames = 0;
-		}
-		else
-		{
-			skippedFrames++;
-		}
 		//everyStep();
 		var oldStep:Int = curStep;
 
