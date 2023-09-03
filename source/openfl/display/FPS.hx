@@ -56,7 +56,7 @@ class FPS extends TextField
 		multiline = true;
 		text = "FPS: ";
 
-		var array:Array<FlxColor> = [
+		var ColorArray:Array<FlxColor> = [
 		FlxColor.fromRGB(148, 0, 211),
 		FlxColor.fromRGB(75, 0, 130),
 		FlxColor.fromRGB(0, 0, 255),
@@ -98,7 +98,7 @@ class FPS extends TextField
 		currentFPS = Math.round((currentCount + cacheCount) / 2);
 		if (currentFPS > ClientPrefs.framerate) currentFPS = ClientPrefs.framerate;
 
-		if (ClientPrefs.data.fpsR&& skippedFrames >= 6)
+		if (!ClientPrefs.data.fpsR && skippedFrames >= 6)
 		{
 			if (currentColor >= ColorArray.length)
 				currentColor = 0;
