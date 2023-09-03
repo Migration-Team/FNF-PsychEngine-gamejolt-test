@@ -45,6 +45,8 @@ class MainMenuState extends MusicBeatState
 	];
 
 	var magenta:FlxSprite;
+	var cursorSprite:FlxSprite;
+	var cursorSprite2:FlxSprite;
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
@@ -60,6 +62,11 @@ class MainMenuState extends MusicBeatState
 		#end
 		WeekData.loadTheFirstEnabledMod();
 
+
+		cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
+        	cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
+      		FlxG.mouse.visible = true;
+    	
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
