@@ -145,7 +145,7 @@ class MusicBeatState extends FlxUIState
 		{
 			if (currentColor >= array.length)
 				currentColor = 0;
-			testColor = ColorArray[currentColor];
+			(cast(Lib.current.getChildAt(0), Main)).changeDisplayColor(ColorArray[currentColor]);
 			currentColor++;
 			skippedFrames = 0;
 		}
