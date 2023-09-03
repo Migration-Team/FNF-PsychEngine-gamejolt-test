@@ -68,6 +68,14 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			60);
 		addOption(option);
 
+		var option:Option = new Option('FPSRainbow', //Name
+			'TEST./nmake for fnfpwp.', //Description
+			'fpsR', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
+
+
 		option.minValue = 60;
 		option.maxValue = 240;
 		option.displayFormat = '%v FPS';
